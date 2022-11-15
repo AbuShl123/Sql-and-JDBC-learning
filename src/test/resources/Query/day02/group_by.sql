@@ -23,3 +23,13 @@ from EMPLOYEES
 group by DEPARTMENT_ID
 order by max(SALARY), min(SALARY) desc;
 
+select *
+from DEPARTMENTS;
+
+select LOCATION_ID, CITY
+from LOCATIONS;
+
+select LOCATION_ID, count(*), CITY
+from DEPARTMENTS join LOCATIONS using (LOCATION_ID)
+group by LOCATION_ID, CITY
+order by 2 desc;
