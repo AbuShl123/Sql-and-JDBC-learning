@@ -1,0 +1,4 @@
+select CUSTOMER_ID, FIRST_NAME, LAST_NAME, PHONE
+from CUSTOMER C left outer join ADDRESS A
+on C.ADDRESS_ID = A.ADDRESS_ID
+where A.ADDRESS_ID is null;
