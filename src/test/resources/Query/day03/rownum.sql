@@ -24,4 +24,18 @@ where ROWNUM<6;
 
 --display who is getting 5th highest salary
 select * from EMPLOYEES
-where SALARY = (select min(SALARY) from (select distinct SALARY from EMPLOYEES order by SALARY desc)where rownum<6);
+where SALARY = (select min(SALARY) from (select distinct SALARY from EMPLOYEES order by SALARY desc) where rownum<6);
+
+select max(SALARY)
+from EMPLOYEES
+where ROWNUM<11
+order by SALARY;
+
+select * from EMPLOYEES
+where SALARY =
+    (
+        select max(SALARY)
+        from (select distinct SALARY from EMPLOYEES order by SALARY)
+        where ROWNUM<3
+    );
+
