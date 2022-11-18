@@ -94,6 +94,17 @@ on D.LOCATION_ID = L.LOCATION_ID
     left join COUNTRIES C
 on L.COUNTRY_ID = C.COUNTRY_ID;
 
+select COUNTRY_NAME, count(*) from EMPLOYEES E
+    left join DEPARTMENTS D
+             on E.DEPARTMENT_ID = D.DEPARTMENT_ID
+    left join LOCATIONS L
+             on D.LOCATION_ID = L.LOCATION_ID
+    left join COUNTRIES C
+             on L.COUNTRY_ID = C.COUNTRY_ID
+group by COUNTRY_NAME
+having count(*)>20
+order by 2;
+
 
 -- this is a fking brain time!
 
