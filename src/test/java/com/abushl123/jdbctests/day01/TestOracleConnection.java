@@ -1,4 +1,4 @@
-package com.abushl123.jdbctests;
+package com.abushl123.jdbctests.day01;
 
 import java.sql.*;
 
